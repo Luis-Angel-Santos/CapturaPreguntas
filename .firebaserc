@@ -1,9 +1,9 @@
 {
   "targets": {
-    "capturapreguntas": {
+    "******": {
       "hosting": {
-        "CapturaPreguntas": [
-          "capturapreguntas"
+        "******": [
+          "*******"
         ]
       }
     }

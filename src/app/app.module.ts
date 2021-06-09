@@ -12,11 +12,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import { environment } from '../environments/environment';
 import { AuthService } from './auth/services/auth.service';
-import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent, HomeComponent
+    AppComponent, NavbarComponent
   ],
   imports: [
     BrowserModule,
