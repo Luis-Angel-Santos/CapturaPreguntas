@@ -1,6 +1,6 @@
 # CapturaPreguntas
 
-IMPORTANTE!!
+# IMPORTANTE!!
 
 Si quieren ver como funciona en la base de datos solo cambien los datos del archivo `environment.ts` por los de su proyecto en Firebase, ademas deben de cambiar las reglas en el Firestore Database y el Storage (allow read, write;), para que tengan permisos, y para poder guardar bien los datos y las imagenes en caso de haberlas. Por defecto esta con el proyecto de firebase mio.
 En el login el correo es "admin@gmail.com" y su contraseña "admin10" XD
