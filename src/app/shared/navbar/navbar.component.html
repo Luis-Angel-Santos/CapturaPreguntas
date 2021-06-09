@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <img src="assets/img/utt.png" alt="UTT" width="100" height="60">
+        <h4>Plataforma Integral de Evaluación de Competencias</h4>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end" *ngIf="user$ | async as user; else login">
+            <p class="user" *ngIf="user">
+                Accedio como: {{user?.email}}
+            </p>
+            <li *ngIf="user">
+                <button type="button" class="btn btn-outline-success">Gestionar Resultados</button>
+            </li>
+            <li *ngIf="user">
+                <button type="button" class="btn btn-outline-danger" (click)="onLogout()">Salir</button>
+            </li>
+        </div>
+        <ng-template #login>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <li>
+                    <button type="button" class="btn btn-outline-info">Registrar Alumno</button>
+                </li>
+            </div>
+        </ng-template>
+
+    </div>
+</nav>

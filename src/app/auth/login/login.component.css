@@ -1,0 +1,26 @@
+.card {
+    background-color: white;
+    margin: 25px;
+    padding: 25px;
+    box-shadow: 5px 10px 6px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    border-bottom: 2px solid gray;
+}
+
+.form-group input {
+    color: #3c834b;
+    width: 100%;
+    margin-bottom: 5px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.form-group:hover {
+    border-bottom: 2px solid #3c834b;
+    transition: 0.5s;
+}
