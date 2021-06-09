@@ -6,12 +6,9 @@ Si quieren ver como funciona en la base de datos solo cambien los datos del arch
 En el login el correo es "admin@gmail.com" y su contraseña "admin10" XD
 
 
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
-
 ## Development server
-
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
 
 ## Code scaffolding
 
