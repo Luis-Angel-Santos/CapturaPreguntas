@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
         pregunta_url: new FormControl(''),
         respuesta1: new FormControl('', Validators.required),
         respuesta2: new FormControl('', Validators.required),
-        respuesta3: new FormControl('', Validators.required),
-        respuesta4: new FormControl('', Validators.required),
+        respuesta3: new FormControl(''),
+        respuesta4: new FormControl(''),
         correcta: new FormControl('', Validators.required),
       });
   }

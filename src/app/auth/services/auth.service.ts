@@ -71,14 +71,19 @@ export class AuthService {
             descCorrec = '';
             break;
     }
-    
-    //var resul = this.preguntas.add(nuevaPregunta);
     try {
-      this.preguntas.doc(descExam).collection(`preguntaNumero:${newPregunta.id_pregunta}`).doc(`pregunta_${newPregunta.id_pregunta}`).set(nuevaPregunta);
-      this.preguntas.doc(descExam).collection(descCorrec).doc(`pregunta_${newPregunta.id_pregunta}`).set({
+      //this.preguntas.add(nuevaPregunta);
+      this.preguntas.doc(descExam).collection('preguntas').doc(`pregunta:${newPregunta.id_pregunta}`).set(nuevaPregunta);
+      this.preguntas.doc(descExam).collection('respuestas').doc(`pregunta:${newPregunta.id_pregunta}`).set({
         id_pregunta: newPregunta.id_pregunta,
         correcta: newPregunta.correcta,
       });
+      
+      /*this.preguntas.doc(descExam).collection(`pregunta${newPregunta.id_pregunta}`).doc(`pregunta${newPregunta.id_pregunta}`).set(nuevaPregunta);
+      this.preguntas.doc(descExam).collection(descCorrec).doc(`pregunta${newPregunta.id_pregunta}`).set({
+        id_pregunta: newPregunta.id_pregunta,
+        correcta: newPregunta.correcta,
+      });*/
       this.preguntaGuardada();
     } catch (error) {
       Swal.fire({
