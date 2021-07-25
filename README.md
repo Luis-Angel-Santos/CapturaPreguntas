@@ -1,10 +1,15 @@
 # CapturaPreguntas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
+# IMPORTANTE!!
+
+Si quieren ver como funciona en la base de datos solo cambien los datos del archivo `environment.ts` por los de su proyecto en Firebase, ademas deben de cambiar las reglas en el Firestore Database y el Storage (allow read, write;), para que tengan permisos, y para poder guardar bien los datos y las imagenes en caso de haberlas. Por defecto esta con el proyecto de firebase mio. Si quieren probar eso en la Authenticacion crean un usuario manualmente con correo y contraseña, porque no cree un registro de usuarios, porque es solo el admin xd
+
+Por defecto en el login el correo es "admin@gmail.com" y su contraseña "admin10".
+
 
 ## Development server
-
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
 
 ## Code scaffolding
 
