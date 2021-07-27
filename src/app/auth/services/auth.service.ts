@@ -10,7 +10,7 @@ import { finalize } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 
 @Injectable()
-export class AuthService {
+export class preguntasService {
   public userData$: Observable<firebase.default.User>;
 
   private preguntas: AngularFirestoreCollection<Pregunta>;
@@ -78,12 +78,6 @@ export class AuthService {
         id_pregunta: newPregunta.id_pregunta,
         correcta: newPregunta.correcta,
       });
-      
-      /*this.preguntas.doc(descExam).collection(`pregunta${newPregunta.id_pregunta}`).doc(`pregunta${newPregunta.id_pregunta}`).set(nuevaPregunta);
-      this.preguntas.doc(descExam).collection(descCorrec).doc(`pregunta${newPregunta.id_pregunta}`).set({
-        id_pregunta: newPregunta.id_pregunta,
-        correcta: newPregunta.correcta,
-      });*/
       this.preguntaGuardada();
     } catch (error) {
       Swal.fire({

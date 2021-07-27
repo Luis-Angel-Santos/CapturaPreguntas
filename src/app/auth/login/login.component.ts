@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { preguntasService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers:[AuthService],
+  providers:[preguntasService],
 })
 export class LoginComponent implements OnInit {
 
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     save: new FormControl(''),
   });
 
-  constructor(private authSvc: AuthService, private router: Router) { }
+  constructor(private authSvc: preguntasService, private router: Router) { }
 
   ngOnInit(): void {}
 

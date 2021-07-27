@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../auth/services/auth.service';
+import { preguntasService } from '../../auth/services/auth.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -7,13 +7,13 @@ import { Observable } from 'rxjs';
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
-  providers:[AuthService],
+  providers:[preguntasService],
 })
 export class NavbarComponent {
 
   public user$: Observable<any> = this.authSvc.afAuth.user;
     
-  constructor(private authSvc: AuthService, private router: Router) { }
+  constructor(private authSvc: preguntasService, private router: Router) { }
 
   async onLogout(){
     try{

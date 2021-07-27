@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
-import { AuthService } from '../auth/services/auth.service';
+import { preguntasService } from '../auth/services/auth.service';
 import { Pregunta } from '../models/pregunta.interface';
 import Swal from 'sweetalert2';
 
@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   crearPregunta: FormGroup;
   private image: any;
 
-  constructor(private auS: AuthService) {
+  constructor(private auS: preguntasService) {
     this.crearPregunta = this.createFormGroup(); 
   }
   

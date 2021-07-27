@@ -1,6 +1,6 @@
 export interface Pregunta{
     id_examen: string;
-    id_pregunta: number;
+    id_pregunta: string;
     pregunta_txt: string;
     pregunta_url?: any;
     respuesta1: string;
