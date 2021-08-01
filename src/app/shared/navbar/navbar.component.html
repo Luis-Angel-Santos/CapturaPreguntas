@@ -7,7 +7,7 @@
                 Accedio como: {{user?.email}}
             </p>
             <li *ngIf="user">
-                <button type="button" class="btn btn-outline-success">Gestionar Resultados</button>
+                <button type="button" class="btn btn-outline-success" routerLink="revisar">Ver Resultados</button>
             </li>
             <li *ngIf="user">
                 <button type="button" class="btn btn-outline-danger" (click)="onLogout()">Salir</button>

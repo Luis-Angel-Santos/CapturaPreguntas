@@ -12,17 +12,20 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import { environment } from '../environments/environment';
 import { preguntasService } from './auth/services/auth.service';
+import { AdminComponent } from './admin/admin.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent
+    AppComponent, NavbarComponent, AdminComponent, HomeComponent, LoginComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,

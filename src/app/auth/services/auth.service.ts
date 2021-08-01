@@ -6,8 +6,9 @@ import { Pregunta } from '../../models/pregunta.interface';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { FileI } from 'src/app/models/file.interface';
 import { Observable } from 'rxjs';
-import { finalize } from 'rxjs/operators';
+import { finalize, map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
+import { Calificacion } from '../../models/calificacion.interface';
 
 @Injectable()
 export class preguntasService {
@@ -17,12 +18,17 @@ export class preguntasService {
   private filePath: any;
   private downloadURL: Observable<string>;
   private noImage: any;
+  private respuestas: Observable<Calificacion[]>;
+  private respuestasCollection: AngularFirestoreCollection<Calificacion>;
 
   constructor(public afAuth: AngularFireAuth, public firestor: FirebaseApp, private afs: AngularFirestore, private storage: AngularFireStorage) { 
     this.preguntas = afs.collection<Pregunta>('preguntas');
+    this.respuestasCollection = this.afs.collection<Calificacion>('calificaciones');
+
+    this.respuestas = this.respuestasCollection.valueChanges();
     this.userData$ = afAuth.authState;
   }
-
+  
   public preAddAndUpdatePregunta(pregunta: Pregunta, image: FileI): void {
     if(image){
       this.subirImagen(pregunta, image);
@@ -149,5 +155,17 @@ export class preguntasService {
       showConfirmButton: false,
       timer: 1500
     })  
+  }
+
+  obtenerResultados(){
+    return this.respuestas = this.respuestasCollection.snapshotChanges()
+      .pipe(map(changes => {
+        return changes.map(action => {
+          const data = action.payload.doc.data() as Calificacion;
+          console.log(data);
+          
+          return data;
+        });
+      }));
   }
 }
